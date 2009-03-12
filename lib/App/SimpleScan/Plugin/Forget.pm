@@ -1,6 +1,6 @@
 package App::SimpleScan::Plugin::Forget;
 
-our $VERSION = '0.02';
+our $VERSION = '1.00';
 
 use warnings;
 use strict;
@@ -8,19 +8,18 @@ use Carp;
 
 sub pragmas {
   no strict 'refs';
-  *{caller() . '::_forget'} = \&_do_forget;
-  return ['forget', \&_do_forget];
-
+  *{ caller() . '::_forget' } = \&_do_forget;
+  return [ 'forget', \&_do_forget ];
 }
 
 sub _do_forget {
-  my($self, $rest) = @_;
-  my @names = split(/\s+/, $rest);
+  my ( $self, $rest ) = @_;
+  my @names = split( /\s+/, $rest );
   local $_;
   $self->_delete_substitution($_) for @names;
 }
 
-1; # Magic true value required at end of module
+1;    # Magic true value required at end of module
 __END__
 
 =head1 NAME
@@ -30,12 +29,12 @@ App::SimpleScan::Plugin::Forget - forget a variable's value
 
 =head1 VERSION
 
-This document describes App::SimpleScan::Plugin::Forget version 0.01
+This document describes App::SimpleScan::Plugin::Forget version 1.00
 
 
 =head1 SYNOPSIS
 
-   # In a simple_scan inout file, after installing this module:
+   # In a simple_scan input file, after installing this module:
 
    # Define the variable foo:
    %%var foo baz bar quux
@@ -48,8 +47,8 @@ This document describes App::SimpleScan::Plugin::Forget version 0.01
 =head1 DESCRIPTION
 
 C<App::SimpleScan::Plugin::Forget> looks through the currently-defined
-variables and removes any variables specified as its arguments. Any
-variables that are not currently defined are simply ignored.
+variables and removes any variables specified as its arguments. If you
+try to forget variables that are currently undefined, nothing happens.
 
 =head1 INTERFACE 
 
@@ -82,8 +81,8 @@ None reported.
 No bugs have been reported.
 
 Please report any bugs or feature requests to
-C<bug-app-simplescan-plugin-forget@rt.cpan.org>, or through the web interface at
-L<http://rt.cpan.org>.
+C<bug-app-simplescan-plugin-forget@rt.cpan.org>, or through the 
+web interface at L<http://rt.cpan.org>.
 
 
 =head1 AUTHOR
@@ -93,7 +92,8 @@ Joe McMahon  C<< <mcmahon@yahoo-inc.com > >>
 
 =head1 LICENCE AND COPYRIGHT
 
-Copyright (c) 2005, Yahoo! and Joe McMahon C<< <mcmahon@yahoo-inc.com > >>. All rights reserved.
+Copyright (c) 2005, 2006 Yahoo! and Joe McMahon 
+C<< <mcmahon@yahoo-inc.com > >>. All rights reserved.
 
 This module is free software; you can redistribute it and/or
 modify it under the same terms as Perl itself. See L<perlartistic>.

@@ -12,7 +12,7 @@ WriteMakefile(
     PREREQ_PM => {
         'Test::More' => 0,
         'Test::Differences' => 0,
-        'App::SimpleScan'    => 0.08,
+        'App::SimpleScan'    => 1.00,
     
     },
     dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
