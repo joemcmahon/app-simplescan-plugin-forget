@@ -6,7 +6,6 @@ use Test::More tests=>6;
 use Test::WWW::Simple;
 use strict;
 
-my \@accent;
 mech->agent_alias('Windows IE 6');
 page_like "http://sample.org/bar",
           qr/freen/,

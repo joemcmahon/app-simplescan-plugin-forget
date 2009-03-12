@@ -1,4 +1,6 @@
 Revision history for App-SimpleScan-Plugin-Forget
+1.02  Wed Aug  2 13:20:41 PDT 2006
+	- remove references to @accent
 
 1.01  Mon Apr 10 09:54:26 PDT 2006
 	- Failed upload; trying again
