@@ -1,5 +1,8 @@
 Revision history for App-SimpleScan-Plugin-Forget
 
-0.0.1  Wed Oct 26 10:04:46 2005
+0.02  Tue Feb 28 13:18:16 PST 2006
+       Update tests for consistency with new App::SimpleScan.
+
+0.01  Wed Oct 26 10:04:46 2005
        Initial release.
 
